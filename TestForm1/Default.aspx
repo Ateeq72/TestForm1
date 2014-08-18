@@ -1,14 +1,99 @@
 ﻿<%@ Import Namespace="System.Data.OleDb" %>
-<%@ Import Namespace="System.IO" %>  
+<%@ Import Namespace="System.IO" %> 
+<%@ Import Namespace="System.Text"%> 
 
 <script runat="server">
 
-    Protected Sub btnSubmit1_Click(sender As Object, e As EventArgs)
+   
+    Protected Sub Button1_Click(sender As Object, e As EventArgs)
+    
+        Dim strBuilder As New StringBuilder()
+        Dim a As String = TextBox1.Text
+        Dim b As String = TextBox2.Text
+    Dim c As String = TextBox3.Text
+    Dim d As String = TextBox4.Text
+    Dim f As String = TextBox5.Text
+    Dim g As String = TextBox6.Text
+    Dim h As String = TextBox7.Text
+    Dim i As String = TextBox8.Text
+    Dim j As String = TextBox9.Text
+    Dim k As String = TextBox10.Text
+    Dim l As String = TextBox11.Text
+    Dim m As String = TextBox12.Text
+    Dim n As String = TextBox13.Text
+    Dim o As String = TextBox14.Text
+    Dim p As String = TextBox15.Text
+    Dim q As String = TextBox16.Text
+    Dim r As String = TextBox17.Text
+    Dim s As String = TextBox18.Text
+    Dim t As String = TextBox19.Text
+    Dim u As String = TextBox20.Text
+        'Dim v As String = TextBox21.Text
+    Dim w As String = TextBox22.Text
         
-        Submit1.Text = "You clicked me!"
- 
+    strBuilder.Append(a.ToString())
+    
+    strBuilder.Append("    ;    ".ToString())
+    strBuilder.Append(b.ToString())
+    strBuilder.Append("    ;    ".ToString())
+    strBuilder.Append(c.ToString())
+    strBuilder.Append("    ;    ".ToString())
+    strBuilder.Append(d.ToString())
+    strBuilder.Append("    ;    ".ToString())
+    strBuilder.Append(f.ToString())
+    strBuilder.Append("    ;    ".ToString())
+    strBuilder.Append(g.ToString())
+    strBuilder.Append("    ;    ".ToString())
+    strBuilder.Append(h.ToString())
+    strBuilder.Append("    ;    ".ToString())
+    strBuilder.Append(i.ToString())
+    strBuilder.Append("    ;    ".ToString())
+    strBuilder.Append(j.ToString())
+    strBuilder.Append("    ;    ".ToString())
+    strBuilder.Append(k.ToString())
+    strBuilder.Append("    ;    ".ToString())
+    strBuilder.Append(l.ToString())
+    strBuilder.Append("    ;    ".ToString())
+    strBuilder.Append(m.ToString())
+    strBuilder.Append("    ;    ".ToString())
+    strBuilder.Append(n.ToString())
+    strBuilder.Append("    ;    ".ToString())
+    strBuilder.Append(o.ToString())
+    strBuilder.Append("    ;    ".ToString())
+    strBuilder.Append(p.ToString())
+    strBuilder.Append("    ;    ".ToString())
+    strBuilder.Append(q.ToString())
+    strBuilder.Append("    ;    ".ToString())
+    strBuilder.Append(r.ToString())
+    strBuilder.Append("    ;    ".ToString())
+    strBuilder.Append(s.ToString())
+    strBuilder.Append("    ;    ".ToString())
+    strBuilder.Append(t.ToString())
+    strBuilder.Append("    ;    ".ToString())
+    strBuilder.Append(u.ToString())
+    strBuilder.Append("    ;    ".ToString())
+    'strBuilder.Append(v.ToString())
+    strBuilder.Append("    ;    ".ToString())
+    strBuilder.Append(w.ToString())
+    strBuilder.Append("    ;    ".ToString())
+       
+   
+        Dim strPath As String = Request.PhysicalApplicationPath & "\document\Test.doc"
+    
+   
+    Dim fStream As FileStream = File.Create(strPath)
+    fStream.Close()
+    Dim sWriter As New StreamWriter(strPath)
+    sWriter.Write(strBuilder)
+      
+    sWriter.Close()
+
         
-    End Sub
+        
+End Sub
+
+  
+  
 </script>
 <head>
     <style type="text/css">
@@ -136,9 +221,9 @@ ol
 <p align="center" class="MsoNormal">
     <b><span style="font-size:11.0pt;mso-bidi-font-size:12.0pt">FORM – II<o:p></o:p></span></b></p>
 <p align="center" class="MsoNormal">
-    <b><span style="font-size:11.0pt;mso-bidi-font-size:12.0pt"><o:p>&nbsp;</o:p></span></b></p>
-<p class="MsoNormal">
-    <span style="font-size:11.0pt;mso-bidi-font-size:12.0pt">1.<span style="mso-spacerun:yes">&nbsp;&nbsp; </span>NAME OF THE COLLEGE<span style="mso-spacerun:yes">&nbsp; </span>
+    &nbsp;</p>
+    <p align="center" class="MsoNormal">
+        &nbsp;<span style="font-size:11.0pt;mso-bidi-font-size:12.0pt">1.<span style="mso-spacerun:yes">&nbsp;&nbsp; </span>NAME OF THE COLLEGE<span style="mso-spacerun:yes">&nbsp; </span>
     <asp:TextBox ID="TextBox1" runat="server" Width="327px"></asp:TextBox>
     </span>
     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox1" ErrorMessage="College Name is Required!" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -146,18 +231,19 @@ ol
 <p class="MsoNormal">
     <span style="font-size:11.0pt;
 mso-bidi-font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
-<p class="MsoNormal">
-    <span style="font-size:11.0pt;mso-bidi-font-size:12.0pt;line-height:200%">2.<span style="mso-spacerun:yes">&nbsp;&nbsp; </span>ADDRESS 
+<p align="center" class="MsoNormal">
+    <span style="font-size:11.0pt;mso-bidi-font-size:12.0pt;line-height:200%">&nbsp;&nbsp;&nbsp;&nbsp; 2.<span style="mso-spacerun:yes">&nbsp;&nbsp; </span>ADDRESS&nbsp;&nbsp;&nbsp; 
     <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
     </span>
     </p>
 <p class="MsoNormal">
     <span style="font-size:11.0pt;
 mso-bidi-font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
-<p class="MsoNormal">
+<p align="center" class="MsoNormal">
     <span style="font-size:11.0pt;
-mso-bidi-font-size:12.0pt">3.<span style="mso-spacerun:yes">&nbsp;&nbsp; </span>MANAGEMENT: GOVT/PVT(NAME) 
+mso-bidi-font-size:12.0pt">&nbsp;&nbsp;&nbsp;&nbsp; 3.<span style="mso-spacerun:yes">&nbsp;&nbsp; </span>MANAGEMENT: GOVT/PVT(NAME) 
     <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="TextBox3" ErrorMessage="Enter alteast one ! with Name." ForeColor="Red"></asp:RequiredFieldValidator>
     </span>
     </p>
 <p class="MsoNormal">
@@ -165,120 +251,124 @@ mso-bidi-font-size:12.0pt">3.<span style="mso-spacerun:yes">&nbsp;&nbsp; </span>
 mso-bidi-font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
     <p class="MsoNormal">
         &nbsp;<o:p></o:p></p>
-    <p class="MsoNormal">
+    <p align="center" class="MsoNormal">
         <o:p></o:p>
-        <span style="font-size:11.0pt;mso-bidi-font-size:12.0pt;line-height:150%">4.ADDRESS 
+        <span style="font-size:11.0pt;mso-bidi-font-size:12.0pt;line-height:150%">&nbsp;&nbsp;&nbsp; 4.ADDRESS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
     <asp:TextBox ID="TextBox4" runat="server" TextMode="MultiLine"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextBox4" ErrorMessage="Address is Required!" ForeColor="Red"></asp:RequiredFieldValidator>
     </span>
     </p>
-<p class="MsoBodyText2" style="line-height:150%">
+<p align="center" class="MsoBodyText2" style="line-height:150%">
     <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     Tel.No.
     <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
-    </p>
-<p class="MsoNormal">
+    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="TextBox5" ErrorMessage="Tel No. Required!" ForeColor="Red"></asp:RequiredFieldValidator>
     <span style="font-size:11.0pt;
-mso-bidi-font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
-<p class="MsoNormal">
-    <span style="font-size:11.0pt;
-mso-bidi-font-size:12.0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp; </span>FAX:
+mso-bidi-font-size:12.0pt"><span style="mso-spacerun:yes">&nbsp; </span>FAX:
     &nbsp; 
     <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
-    </span></p>
-    <p class="MsoNormal">
-        <span style="font-size:11.0pt;
-mso-bidi-font-size:12.0pt">E-mail.<asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
-&nbsp;</span><asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBox7" ErrorMessage="Email ID is Required!" ForeColor="Red"></asp:RequiredFieldValidator>
-&nbsp;&nbsp;&nbsp;
-        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TextBox7" ErrorMessage="Enter Valid Email ID!" ForeColor="Red"></asp:RegularExpressionValidator>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
-<p class="MsoNormal">
-    <span style="font-size:11.0pt;
-mso-bidi-font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
-<p class="MsoNormal">
-    <span style="font-size:11.0pt;
-mso-bidi-font-size:12.0pt">5.NATURE OF THE COURSE: Degree /P.G.) <asp:TextBox ID="TextBox8" runat="server"></asp:TextBox>
     </span>
     </p>
     <p class="MsoNormal">
         &nbsp;</p>
+    <p align="center" class="MsoNormal">
+        <span style="font-size:11.0pt;
+mso-bidi-font-size:12.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; E-mail.<asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
+&nbsp;</span><asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBox7" ErrorMessage="Email ID is Required!" ForeColor="Red"></asp:RequiredFieldValidator>
+&nbsp;&nbsp;&nbsp;
+        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TextBox7" ErrorMessage="Enter Valid Email ID!" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
 <p class="MsoNormal">
     <span style="font-size:11.0pt;
-mso-bidi-font-size:12.0pt">6.DURATION OF THE COURSE 
+mso-bidi-font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+<p align="center"  class="MsoNormal">
+    <span style="font-size:11.0pt;
+mso-bidi-font-size:12.0pt">&nbsp;&nbsp;&nbsp; 5.NATURE OF THE COURSE: Degree /P.G.) <asp:TextBox ID="TextBox8" runat="server"></asp:TextBox>
+    </span>
+    </p>
+    <p class="MsoNormal">
+        &nbsp;</p>
+<p align="center" class="MsoNormal">
+    <span style="font-size:11.0pt;
+mso-bidi-font-size:12.0pt">&nbsp;&nbsp;&nbsp; 6.DURATION OF THE COURSE 
     <asp:TextBox ID="TextBox9" runat="server"></asp:TextBox>
     </span>
     </p>
 <p class="MsoNormal">
     <span style="font-size:11.0pt;
 mso-bidi-font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
-<p class="MsoNormal">
+<p align="center" class="MsoNormal">
     <span style="font-size:11.0pt;
-mso-bidi-font-size:12.0pt">7.COURSE AFFILIATION (University/Board) 
+mso-bidi-font-size:12.0pt">&nbsp;&nbsp;&nbsp; 7.COURSE AFFILIATION (University/Board) 
     <asp:TextBox ID="TextBox10" runat="server"></asp:TextBox>
     </span>
     </p>
     <p class="MsoNormal">
         &nbsp;</p>
-<p class="MsoNormal">
+<p align="center" class="MsoNormal">
     <span style="font-size:11.0pt;
-mso-bidi-font-size:12.0pt">8.GOVERNMENT PERMISSION VIDE<span style="mso-spacerun:yes">&nbsp; </span>ORDER NO. 
+mso-bidi-font-size:12.0pt">&nbsp;&nbsp;&nbsp; 8.GOVERNMENT PERMISSION VIDE<span style="mso-spacerun:yes">&nbsp; </span>ORDER NO. 
     <asp:TextBox ID="TextBox11" runat="server"></asp:TextBox>
     </span>
     </p>
 <p class="MsoNormal">
     <span style="font-size:11.0pt;
 mso-bidi-font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
-<p class="MsoNormal">
+<p align="center" class="MsoNormal">
     <span style="font-size:11.0pt;
-mso-bidi-font-size:12.0pt">9. INTAKE ADMISSION CAPACITY 
+mso-bidi-font-size:12.0pt">&nbsp;&nbsp;&nbsp; 9. INTAKE ADMISSION CAPACITY 
     <asp:TextBox ID="TextBox12" runat="server"></asp:TextBox>
     </span>
     </p>
 <p class="MsoNormal">
     <span style="font-size:11.0pt;
 mso-bidi-font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
-<p class="MsoNormal">
+<p align="center" class="MsoNormal">
     <span style="font-size:11.0pt;
-mso-bidi-font-size:12.0pt">10. NAME OF THE PRINCIPAL<o:p>&nbsp;&nbsp;</o:p><asp:TextBox ID="TextBox13" runat="server"></asp:TextBox>
+mso-bidi-font-size:12.0pt">&nbsp;&nbsp; 10. NAME OF THE PRINCIPAL<o:p>&nbsp;&nbsp;</o:p><asp:TextBox ID="TextBox13" runat="server"></asp:TextBox>
+    <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="TextBox13" ErrorMessage="Required!" ForeColor="Red"></asp:RequiredFieldValidator>
     </span></p>
     <p class="MsoNormal">
         &nbsp;</p>
-<p class="MsoNormal">
+<p align="center" class="MsoNormal">
     <span style="font-size:11.0pt;
-mso-bidi-font-size:12.0pt">10 (a). QUALIFICATIONS&nbsp;
+mso-bidi-font-size:12.0pt">&nbsp;&nbsp;&nbsp; 10 (a). QUALIFICATIONS&nbsp;
     <asp:TextBox ID="TextBox14" runat="server"></asp:TextBox>
-    &nbsp;&nbsp; 10 (b). I. A. P. NO 
+    &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ControlToValidate="TextBox14" ErrorMessage="Required!" ForeColor="Red"></asp:RequiredFieldValidator>
+    &nbsp; 10 (b). I. A. P. NO 
     <asp:TextBox ID="TextBox15" runat="server"></asp:TextBox>
+    <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="TextBox15" ErrorMessage="Required!" ForeColor="Red"></asp:RequiredFieldValidator>
     </span>
     </p>
 <p class="MsoNormal">
     <span style="font-size:11.0pt;
 mso-bidi-font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
-<p class="MsoNormal">
+<p align="center" class="MsoNormal">
     <span style="font-size:11.0pt;
-mso-bidi-font-size:12.0pt">11.STAFF STRENGHT: Attach list of Staff Members with cadre and Pay structure(Teaching and Clinical)<o:p></o:p></span></p>
+mso-bidi-font-size:12.0pt">&nbsp;&nbsp;&nbsp; 11.STAFF STRENGHT: Attach list of Staff Members with cadre and Pay structure(Teaching and Clinical)<o:p></o:p></span></p>
 <p class="MsoNormal">
     <span style="font-size:11.0pt;
 mso-bidi-font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
-<p class="MsoNormal">
+<p align="center" class="MsoNormal">
     <span style="font-size:11.0pt;
-mso-bidi-font-size:12.0pt">12.CONDITIONS LAID BY EARLIER INSPECTION TEAM <o:p></o:p></span>
+mso-bidi-font-size:12.0pt">&nbsp;&nbsp;&nbsp; 12.CONDITIONS LAID BY EARLIER INSPECTION TEAM <o:p></o:p></span>
 </p>
 <p class="MsoNormal">
     <span style="font-size:11.0pt;
 mso-bidi-font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
-<p class="MsoNormal">
+<p align="center" class="MsoNormal">
     <span style="font-size:11.0pt;
-mso-bidi-font-size:12.0pt">1. 
+mso-bidi-font-size:12.0pt">&nbsp;&nbsp;&nbsp;&nbsp; 1. 
     <asp:TextBox ID="TextBox16" runat="server"></asp:TextBox>
     </span>
     </p>
 <p class="MsoNormal">
     <span style="font-size:11.0pt;
 mso-bidi-font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
-<p class="MsoNormal">
+<p align="center" class="MsoNormal">
     <span style="font-size:11.0pt;
-mso-bidi-font-size:12.0pt">2.<o:p>
+mso-bidi-font-size:12.0pt">&nbsp;&nbsp;&nbsp;&nbsp; 2.<o:p>
     <asp:TextBox ID="TextBox17" runat="server"></asp:TextBox>
     </o:p>
     </span>
@@ -287,37 +377,45 @@ mso-bidi-font-size:12.0pt">2.<o:p>
         <span style="font-size:11.0pt;
 mso-bidi-font-size:12.0pt">
         <o:p>&nbsp;</o:p></span></p>
-<p class="MsoNormal">
+<p align="center" class="MsoNormal">
     <span style="font-size:11.0pt;
-mso-bidi-font-size:12.0pt">3. 
-    <asp:TextBox ID="TextBox18" runat="server"></asp:TextBox>
+mso-bidi-font-size:12.0pt">&nbsp;&nbsp;&nbsp;&nbsp; 3. 
+    <asp:TextBox ID="TextBox18" runat="server"  style="text-align: center"></asp:TextBox>
     </span>
     </p>
 <p class="MsoNormal">
     <span style="font-size:11.0pt;
 mso-bidi-font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
-<p class="MsoNormal">
+<p align="center" class="MsoNormal">
     <span style="font-size:11.0pt;
-mso-bidi-font-size:12.0pt">13. COMPLIANCE REPORT: (Attach the copy of the report)<o:p></o:p></span></p>
+mso-bidi-font-size:12.0pt">&nbsp;&nbsp;&nbsp; 13. COMPLIANCE REPORT: (Attach the copy of the report)<o:p></o:p></span></p>
 <p class="MsoNormal">
     <span style="font-size:11.0pt;
 mso-bidi-font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
-<p class="MsoNormal">
-    <span style="font-size:11.0pt;mso-bidi-font-size:12.0pt;line-height:150%">14.Continuation Recognition fees paid Vide D.D No.&nbsp;&nbsp;
+<p align="center" class="MsoNormal">
+    <span style="font-size:11.0pt;mso-bidi-font-size:12.0pt;line-height:150%">&nbsp;&nbsp;&nbsp; 14.Continuation Recognition fees paid Vide D.D No.&nbsp;&nbsp;
     &nbsp; 
     <asp:TextBox ID="TextBox19" runat="server"></asp:TextBox>
-    drawn on
+    <span style="font-size:11.0pt;mso-bidi-font-size:12.0pt;line-height:150%">
+    <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="TextBox19" ErrorMessage="Enter Vide D.D No." ForeColor="Red"></asp:RequiredFieldValidator>
+&nbsp;</span>drawn on</span></p>
+    <p class="MsoNormal">
+        &nbsp;</p>
+    <p align="center" class="MsoNormal">
+        <span style="font-size:11.0pt;mso-bidi-font-size:12.0pt;line-height:150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <asp:TextBox ID="TextBox20" runat="server"></asp:TextBox>
+        <span style="mso-spacerun:yes">&nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="TextBox20" ErrorMessage="Enter Drawn on Details!" ForeColor="Red"></asp:RequiredFieldValidator>
+        &nbsp;&nbsp; </span>dtd 
+    <asp:TextBox ID="TextBox22" runat="server"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="TextBox22" ErrorMessage="Enter dtd Info!" ForeColor="Red"></asp:RequiredFieldValidator>
     </span>
 </p>
 <p class="MsoNormal">
-    <span style="font-size:11.0pt;mso-bidi-font-size:12.0pt;line-height:150%"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:TextBox ID="TextBox21" runat="server"></asp:TextBox>
-    &nbsp; </span>dtd 
-    <asp:TextBox ID="TextBox22" runat="server"></asp:TextBox>
-    </span>
-    </p>
-<p class="MsoNormal">
-    <span style="font-size:11.0pt;mso-bidi-font-size:12.0pt;line-height:150%"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>We hereby certify that to the best our knowledge the information given above is true.<o:p></o:p></span></p>
+    <span style="font-size:11.0pt;mso-bidi-font-size:12.0pt;line-height:150%"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+    <p class="MsoNormal">
+        &nbsp;</p>
+    <p class="MsoNormal">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size:11.0pt;mso-bidi-font-size:12.0pt;line-height:150%">We hereby certify that to the best our knowledge the information given above is true.<o:p></o:p></span></p>
 <p class="MsoNormal">
     <span style="font-size:11.0pt;
 mso-bidi-font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
@@ -329,14 +427,24 @@ mso-bidi-font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
 mso-bidi-font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
 <p class="MsoNormal">
     <span style="font-size:11.0pt;
-mso-bidi-font-size:12.0pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><b><span style="font-size:10.0pt;mso-bidi-font-size:12.0pt">SIGNATURE OF THE PRINCIPAL <span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>SIGNATURE OF THE CHAIRMAN<o:p></o:p></span></b></p>
+mso-bidi-font-size:12.0pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+    <p class="MsoNormal">
+        &nbsp;</p>
+    <p class="MsoNormal">
+        &nbsp;</p>
+    <p class="MsoNormal">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b><span style="font-size:10.0pt;mso-bidi-font-size:12.0pt">SIGNATURE OF THE PRINCIPAL <span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>SIGNATURE OF THE CHAIRMAN<o:p></o:p></span></b></p>
 <h1><span style="font-size:11.0pt;mso-bidi-font-size:12.0pt"><o:p>&nbsp;</o:p></span></h1>
 <h1><span style="font-size:11.0pt;mso-bidi-font-size:12.0pt"><o:p>&nbsp;</o:p></span></h1>
 <p class="auto-style1">
     <o:p></o:p>
-    <input id="Submit1" type="submit" value="Submit" /><input id="Reset1" type="reset" value="Reset" /></p>
+    <input id="Submit1" type="submit" value="Submit" /><input id="Reset1" type="reset" value="Reset" /><asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Save" />
+    </p>
 <h1><span style="font-size:11.0pt;mso-bidi-font-size:12.0pt"><o:p>&nbsp;</o:p></span></h1>
-<h1 style="margin-right:0in"><span style="font-size:11.0pt;mso-bidi-font-size:
+<h1 style="margin-right:0in">&nbsp;</h1>
+    <h1 style="margin-right:0in">&nbsp;</h1>
+    <h1 style="margin-right:0in">&nbsp;</h1>
+    <h1 style="margin-right:0in"><span style="font-size:11.0pt;mso-bidi-font-size:
 12.0pt">DETAILED ANNEXURES TO BE ENCLOSED WITH THE FORM-II<o:p></o:p></span></h1>
 <p align="center" class="MsoNormal">
     <span style="font-size:11.0pt;mso-bidi-font-size:12.0pt">(<b>Use Separate Paper)<o:p></o:p></b></span></p>

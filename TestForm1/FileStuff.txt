@@ -1,0 +1,67 @@
+ 
+        
+        
+        Dim FILENAME As String = Server.MapPath("~/App_Data/ateeq.docx")
+        Dim Fs As FileStream
+        Fs = File.OpenWrite(FILENAME)
+        
+        Dim a As String = TextBox1.Text
+        Dim b As String = TextBox2.Text
+        Dim c As String = TextBox3.Text
+        
+
+        Dim userData As String = a + "," + b + "," + c
+        
+        
+        Try
+            File.Exists(FILENAME)
+            If (File.Exists(FILENAME)) Then
+                File.WriteAllText(FILENAME, userData)
+            End If
+            
+        Catch ex As Exception
+ 
+        End Try
+        
+		
+		Protected Sub Button1_Click
+(ByVal sender As Object, ByVal e As EventArgs)
+Dim strBuilder As New StringBuilder()
+strBuilder.Append("<h1 title='Header' align='Center'>
+     Writing To Word Using ASP.NET</h1> ".ToString())
+strBuilder.Append("<br>".ToString())
+strBuilder.Append("<table align='Center'>".ToString())
+strBuilder.Append("<tr>".ToString())
+
+strBuilder.Append("<td style='width:100px;color:green'>
+                           <b>amiT</b></td>".ToString())
+strBuilder.Append("<td style='width:100px;color:red'>
+                               India</td>".ToString())
+strBuilder.Append("</tr>".ToString())
+strBuilder.Append("</table>".ToString())
+'string path = @"C:\Test.doc";
+
+Dim strPath As String = 
+Request.PhysicalApplicationPath & "\document\Test.doc"
+    
+'string strTextToWrite = TextBox1.Text;
+Dim fStream As FileStream = File.Create(strPath)
+fStream.Close()
+Dim sWriter As New StreamWriter(strPath)
+sWriter.Write(strBuilder)
+      
+sWriter.Close()
+End Sub
+
+Protected Sub Button2_Click
+(ByVal sender As Object, ByVal e As EventArgs)
+Dim strPath As String = 
+Request.PhysicalApplicationPath & "\document\Test.doc"
+
+Dim fStream As New FileStream
+(strPath, FileMode.Open, FileAccess.Read)
+Dim sReader As New StreamReader(fStream)
+TextBox2.Text = sReader.ReadToEnd()
+sReader.Close()
+Response.Write(TextBox2.Text)
+End Sub
